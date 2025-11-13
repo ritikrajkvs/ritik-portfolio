@@ -1,70 +1,71 @@
-import React, { useState } from 'react'
-import ProjectCard from './ProjectCard'
-import ProjectModal from './ProjectModal'
+import React, { useState } from "react";
+import ProjectCard from "./ProjectCard";
+import ProjectModal from "./ProjectModal";
 
-/*
-  Update this `data` array by copying exact lines from your resume.
-  For each project include: title, role, duration, shortDesc, bullets (array),
-  tech, repo, live, thumb and optional caseStudy (link or route)
-*/
+// ⭐ FINAL EXTENDED PROJECT DATA (Resume-level details)
 const data = [
   {
-    title: 'Devtinder',
-    role: 'Full-Stack Developer',
-    duration: 'May 2024 — Aug 2024',
-    shortDesc: 'MERN-based developer networking platform that connects devs for collaboration.',
+    title: "Devtinder",
+    role: "Full-Stack Developer (MERN)",
+    duration: "May 2024 – Aug 2024",
+    shortDesc:
+      "A MERN-based developer networking platform enabling profile creation, collaboration matchmaking, and real-time chat.",
     bullets: [
-      'Implemented JWT authentication and secure profile editing.',
-      'Built intelligent feed & connection request system.',
-      'Added real-time chat using WebSockets for instant messaging.'
+      "Designed and implemented a secure authentication system using JWT and bcrypt.",
+      "Built dynamic developer profiles including skills, bio, tech stack, interests, and social links.",
+      "Developed the intelligent feed algorithm based on skill-match and activity ranking.",
+      "Implemented real-time chat using WebSockets, enabling instant messaging between matched users.",
+      "Added connection request flow (send, accept, reject, pending states) with proper DB modeling.",
+      "Built full CRUD operations for profile editing using RESTful APIs.",
+      "Enhanced UI with TailwindCSS and responsive card-based layouts for mobile and desktop."
     ],
-    tech: 'React, Node.js, Express, MongoDB, Tailwind',
-    repo: 'https://github.com/ritikrajkvs/Devtinder',
-    live: 'https://ubiquitous-naiad-ba85d9.netlify.app/',
-    thumb: '/assets/devtinder.png',
-    caseStudy: '' // optional: link to case study page or external doc
+    tech: "React, Node.js, Express, MongoDB, TailwindCSS, WebSockets, JWT, REST API",
+    repo: "https://github.com/ritikrajkvs/Devtinder",
+    live: "https://ubiquitous-naiad-ba85d9.netlify.app/",
+    thumb: "/assets/devtinder.png",
+    caseStudy: ""
   },
   {
-    title: 'CineGPT',
-    role: 'Frontend + ML integration',
-    duration: 'Jan 2024 — Apr 2024',
-    shortDesc: 'AI-driven movie recommender with natural-language queries and trailers.',
+    title: "CineGPT",
+    role: "Frontend + AI Integration Engineer",
+    duration: "Jan 2024 – Apr 2024",
+    shortDesc:
+      "AI-powered movie recommendation platform using Google Gemini for natural language movie search and TMDB film data.",
     bullets: [
-      'Integrated TMDB API and built conversational search powered by Gemini/LLM.',
-      'Implemented responsive Netflix-style UI and trailer playback.',
-      'Added Firebase auth and secure data storage for user preferences.'
+      "Integrated Google Gemini API to enable conversational movie search with smart recommendations.",
+      "Built Redux-managed global store for trending movies, queries, carousels, and trailers.",
+      "Integrated TMDB API for highly optimized movie lists, metadata fetching, and poster delivery.",
+      "Implemented Firebase Authentication with secure session flow for Google and Email logins.",
+      "Built Netflix-style responsive UI with animated banners, carousels, categories, and search results.",
+      "Implemented movie trailer playback with embedded YouTube player and smart fallback handling.",
+      "Optimized API calls using caching strategies to reduce redundant network requests."
     ],
-    tech: 'React, Redux Toolkit, Firebase, TMDB API, Tailwind',
-    repo: 'https://github.com/ritikrajkvs/CineGPT',
-    live: 'https://cinegpt-4e591.web.app/',
-    thumb: '/assets/cinegpt.png',
-    caseStudy: ''
+    tech: "React, Redux Toolkit, Firebase, TMDB API, Gemini API, TailwindCSS, YouTube Embed API",
+    repo: "https://github.com/ritikrajkvs/CineGPT",
+    live: "https://cinegpt-4e591.web.app/",
+    thumb: "/assets/cinegpt.png",
+    caseStudy: ""
   }
-]
+];
 
-export default function Projects(){
-  const [selected, setSelected] = useState(null)
+export default function Projects() {
+  const [selected, setSelected] = useState(null);
 
   return (
     <>
-      <section id="projects" className="max-w-5xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
+      <section id="projects" className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Featured Projects
+        </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {data.map((p, i) => (
-            <ProjectCard
-              key={i}
-              project={p}
-              onViewDetails={() => setSelected(p)}
-            />
+            <ProjectCard key={i} project={p} onViewDetails={() => setSelected(p)} />
           ))}
         </div>
       </section>
 
-      {/* Modal shown when a project is selected */}
-      {selected && (
-        <ProjectModal project={selected} onClose={() => setSelected(null)} />
-      )}
+      {selected && <ProjectModal project={selected} onClose={() => setSelected(null)} />}
     </>
-  )
+  );
 }
