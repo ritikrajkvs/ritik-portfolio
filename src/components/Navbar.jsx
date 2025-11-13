@@ -68,7 +68,7 @@ export default function Navbar() {
           <a href="#contact" className="block text-gray-700 hover:text-indigo-600">Contact</a>
 
           <a
-            href="/assets/Ritik_Raj_Resume.pdf"
+            href="/assets/FINAL_RESUME.pdf"
             download
             className="
               flex items-center gap-2 mt-4 px-4 py-2 rounded-lg text-white text-sm
