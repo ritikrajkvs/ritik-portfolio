@@ -10,10 +10,8 @@ export default function ProjectCard({ project, onViewDetails }) {
         transition-transform hover:-translate-y-1 hover:shadow-2xl
       "
     >
-      {/* Inner Container */}
-      <div className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md">
+      <div className="bg-white rounded-2xl p-5 shadow-md">
         
-        {/* Thumbnail */}
         <div className="overflow-hidden rounded-xl">
           <img
             src={project.thumb}
@@ -23,10 +21,7 @@ export default function ProjectCard({ project, onViewDetails }) {
           />
         </div>
 
-        {/* Content */}
         <div className="mt-5">
-
-          {/* Title */}
           <h3
             className="
               text-2xl font-bold bg-gradient-to-r 
@@ -37,18 +32,15 @@ export default function ProjectCard({ project, onViewDetails }) {
             {project.title}
           </h3>
 
-          {/* Role + Duration */}
           <p className="text-sm text-gray-600 mt-1">
             {project.role} • <span className="text-gray-500">{project.duration}</span>
           </p>
 
-          {/* Short Description */}
-          <p className="text-gray-700 dark:text-gray-300 mt-3 leading-relaxed">
+          <p className="text-gray-700 mt-3 leading-relaxed">
             {project.shortDesc}
           </p>
 
-          {/* Bullet List */}
-          <ul className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
+          <ul className="mt-4 text-sm text-gray-700 space-y-1">
             {project.bullets.slice(0, 3).map((b, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <span className="text-indigo-600 mt-1">•</span>
@@ -57,16 +49,13 @@ export default function ProjectCard({ project, onViewDetails }) {
             ))}
           </ul>
 
-          {/* Tech Stack Chips */}
           <div className="flex flex-wrap gap-2 mt-4">
             {project.tech.split(",").map((t, idx) => (
               <span
                 key={idx}
                 className="
                   px-3 py-1 text-xs rounded-full
-                  bg-gray-100 dark:bg-gray-800
-                  text-gray-600 dark:text-gray-300
-                  border border-gray-200 dark:border-gray-700
+                  bg-gray-100 text-gray-600 border
                 "
               >
                 {t.trim()}
@@ -74,7 +63,6 @@ export default function ProjectCard({ project, onViewDetails }) {
             ))}
           </div>
 
-          {/* Buttons */}
           <div className="flex items-center gap-3 mt-5">
 
             {/* GitHub */}
@@ -84,8 +72,41 @@ export default function ProjectCard({ project, onViewDetails }) {
               rel="noreferrer"
               className="
                 flex items-center gap-2 px-3 py-2 rounded-lg 
-                bg-gray-900 text-white text-sm
-                hover:bg-gray-700 transition
+                bg-gray-900 text-white text-sm hover:bg-gray-700
               "
             >
-              <Github size={16}
+              <Github size={16} /> Repo
+            </a>
+
+            {/* Live */}
+            {project.live && (
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  flex items-center gap-2 px-3 py-2 rounded-lg 
+                  bg-indigo-600 text-white text-sm hover:bg-indigo-700
+                "
+              >
+                <ExternalLink size={16} /> Live
+              </a>
+            )}
+
+            {/* View Details */}
+            <button
+              onClick={onViewDetails}
+              className="
+                ml-auto px-3 py-2 rounded-lg border text-sm 
+                hover:bg-gray-50 transition
+              "
+            >
+              View Details
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+}
