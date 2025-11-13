@@ -13,6 +13,7 @@ export default function App(){
       <Hero />
       <Skills />
       <Projects />
+      <Contact />
       <Footer />
     </>
   )
