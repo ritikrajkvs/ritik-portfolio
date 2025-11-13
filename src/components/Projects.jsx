@@ -28,7 +28,7 @@ const data = [
   {
     title: "CineGPT",
     role: "Frontend + AI Integration Engineer",
-    duration: "Jan 2024 – Apr 2024",
+    duration: "Jun 2024 – Jul 2024",
     shortDesc:
       "AI-powered movie recommendation platform using Google Gemini for natural language movie search and TMDB film data.",
     bullets: [
