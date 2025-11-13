@@ -40,7 +40,7 @@ export default function Navbar() {
 
         {/* Right Side Resume Button */}
         <a
-          href="/assets/Ritik_Raj_Resume.pdf"
+          href="/assets/FINAL_RESUME.pdf"
           download
           className="
             hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm
