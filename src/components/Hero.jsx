@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FileDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -24,8 +24,8 @@ export default function Hero() {
         <p className="mt-4 text-lg text-gray-600 leading-relaxed">
           A passionate <span className="font-semibold text-gray-800">Full-Stack Developer</span>{" "}
           specializing in building scalable MERN applications, AI-powered platforms, and
-          production-ready interfaces. I enjoy creating clean, functional, and elegant digital
-          experiences.
+          production-ready user experiences. I focus on creating clean, robust, and efficient
+          solutions that enhance user interaction.
         </p>
 
         {/* ROLE BADGES */}
@@ -44,7 +44,7 @@ export default function Hero() {
         {/* BUTTONS */}
         <div className="flex gap-4 mt-8">
           <a
-            href="#contact"
+            href="#projects"
             className="
               px-5 py-3 rounded-lg text-white font-medium
               bg-gradient-to-r from-indigo-600 to-purple-600
@@ -52,27 +52,16 @@ export default function Hero() {
               flex items-center gap-2
             "
           >
-            Hire Me <ArrowRight size={18} />
-          </a>
-
-          <a
-            href="/assets/Ritik_Raj_Resume.pdf"
-            download
-            className="
-              px-5 py-3 rounded-lg border font-medium
-              flex items-center gap-2 hover:bg-gray-50 transition
-            "
-          >
-            <FileDown size={18} /> Resume
+            Explore My Work <ArrowRight size={18} />
           </a>
         </div>
 
-        {/* VIEW PROJECTS LINK */}
+        {/* OPTIONAL SUB-LINK */}
         <a
-          href="#projects"
+          href="#contact"
           className="mt-5 inline-block text-indigo-600 font-medium hover:underline"
         >
-          View My Projects →
+          Get in Touch →
         </a>
       </motion.div>
 
