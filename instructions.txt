@@ -1,0 +1,43 @@
+FINAL PORTFOLIO SETUP INSTRUCTIONS
+
+1. Merge Part1, Part2, Part3 folders into a single folder.
+   Structure must look like:
+
+   /project
+     ├── index.html
+     ├── package.json
+     ├── tailwind.config.cjs
+     ├── postcss.config.cjs
+     ├── public
+     │    └── assets
+     │         ├── myphoto.jpg
+     │         ├── devtinder.png
+     │         └── cinegpt.png
+     └── src
+          ├── App.jsx
+          ├── main.jsx
+          ├── index.css
+          └── components
+               ├── Navbar.jsx
+               ├── Hero.jsx
+               ├── About.jsx
+               ├── Skills.jsx
+               ├── Projects.jsx
+               ├── ProjectCard.jsx
+               └── Footer.jsx
+
+2. Place your profile photo here:
+   /public/assets/myphoto.jpg
+
+3. Place project thumbnails here:
+   /public/assets/devtinder.png
+   /public/assets/cinegpt.png
+
+4. Install dependencies:
+   npm install
+
+5. Start the project:
+   npm run dev
+
+Your portfolio will run on:
+http://localhost:5173
