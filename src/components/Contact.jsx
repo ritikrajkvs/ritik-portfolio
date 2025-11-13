@@ -50,7 +50,7 @@ export default function Contact() {
 
         {/* Right side: simple contact form via Formspree */}
         <form
-          action="https://formspree.io/f/xqakawge"
+          action="https://formspree.io/f/xpwkwkle"
           method="POST"
           className="flex flex-col gap-4"
         >
