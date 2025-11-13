@@ -25,7 +25,7 @@ export default function Navbar() {
           {/* Resume Download Button */}
           <li>
             <a
-              href="/assets/Ritik_Raj_Resume.pdf"  // PLACE YOUR RESUME HERE
+              href="/assets/FINAL_RESUME.pdf"  // PLACE YOUR RESUME HERE
               download
               className="
                 flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm
