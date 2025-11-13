@@ -7,7 +7,7 @@ const data = [
   {
     title: "Devtinder",
     role: "Full-Stack Developer (MERN)",
-    duration: "May 2024 – Aug 2024",
+    duration: "May 2025 – Aug 2025",
     shortDesc:
       "A MERN-based developer networking platform enabling profile creation, collaboration matchmaking, and real-time chat.",
     bullets: [
