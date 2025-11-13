@@ -1,60 +1,91 @@
-import React from 'react'
+import React from "react";
+import { Github, ExternalLink } from "lucide-react";
 
 export default function ProjectCard({ project, onViewDetails }) {
   return (
-    <div className="p-5 bg-white rounded-xl shadow hover:shadow-lg transition border">
-      <img
-        src={project.thumb}
-        alt={project.title}
-        className="w-full h-44 object-cover rounded"
-      />
-
-      <div className="mt-4">
-        <div className="flex items-start justify-between">
-          <div>
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="text-sm text-gray-500">{project.role} • {project.duration}</p>
-          </div>
-          <div className="text-xs text-gray-400">{project.tech}</div>
+    <div
+      className="
+        group relative p-[2px] rounded-2xl 
+        bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500
+        transition-transform hover:-translate-y-1 hover:shadow-2xl
+      "
+    >
+      {/* Inner Container */}
+      <div className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md">
+        
+        {/* Thumbnail */}
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src={project.thumb}
+            alt={project.title}
+            className="w-full h-48 object-cover rounded-xl 
+              group-hover:scale-105 transition-all duration-300"
+          />
         </div>
 
-        <p className="text-gray-700 mt-3">{project.shortDesc}</p>
+        {/* Content */}
+        <div className="mt-5">
 
-        <ul className="mt-3 text-sm text-gray-600 list-disc list-inside space-y-1">
-          {project.bullets.slice(0, 3).map((b, idx) => (
-            <li key={idx}>{b}</li>
-          ))}
-        </ul>
-
-        <div className="flex gap-3 mt-4">
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noreferrer"
-            className="px-3 py-1 bg-gray-800 text-white text-sm rounded"
+          {/* Title */}
+          <h3
+            className="
+              text-2xl font-bold bg-gradient-to-r 
+              from-indigo-600 to-purple-600 bg-clip-text text-transparent
+              tracking-wide drop-shadow-sm
+            "
           >
-            Repo
-          </a>
+            {project.title}
+          </h3>
 
-          {project.live && (
+          {/* Role + Duration */}
+          <p className="text-sm text-gray-600 mt-1">
+            {project.role} • <span className="text-gray-500">{project.duration}</span>
+          </p>
+
+          {/* Short Description */}
+          <p className="text-gray-700 dark:text-gray-300 mt-3 leading-relaxed">
+            {project.shortDesc}
+          </p>
+
+          {/* Bullet List */}
+          <ul className="mt-4 text-sm text-gray-700 dark:text-gray-300 space-y-1">
+            {project.bullets.slice(0, 3).map((b, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <span className="text-indigo-600 mt-1">•</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Tech Stack Chips */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            {project.tech.split(",").map((t, idx) => (
+              <span
+                key={idx}
+                className="
+                  px-3 py-1 text-xs rounded-full
+                  bg-gray-100 dark:bg-gray-800
+                  text-gray-600 dark:text-gray-300
+                  border border-gray-200 dark:border-gray-700
+                "
+              >
+                {t.trim()}
+              </span>
+            ))}
+          </div>
+
+          {/* Buttons */}
+          <div className="flex items-center gap-3 mt-5">
+
+            {/* GitHub */}
             <a
-              href={project.live}
+              href={project.repo}
               target="_blank"
               rel="noreferrer"
-              className="px-3 py-1 bg-indigo-600 text-white text-sm rounded"
+              className="
+                flex items-center gap-2 px-3 py-2 rounded-lg 
+                bg-gray-900 text-white text-sm
+                hover:bg-gray-700 transition
+              "
             >
-              Live
-            </a>
-          )}
-
-          <button
-            onClick={onViewDetails}
-            className="ml-auto px-3 py-1 border rounded text-sm hover:bg-gray-50"
-          >
-            View details
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+              <Github size={16}
