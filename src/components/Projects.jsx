@@ -5,6 +5,24 @@ import ProjectModal from "./ProjectModal";
 // ⭐ FINAL EXTENDED PROJECT DATA (Resume-level details)
 const data = [
   {
+    title: "Smart Recipe Generator",
+    role: "Full Stack Developer",
+    duration: "Nov 2025",
+    shortDesc:
+      "AI-powered culinary assistant that detects ingredients from photos and suggests personalized recipes.",
+    bullets: [
+      "Integrated Google Cloud Vision API to automatically identify ingredients from user-uploaded images.",
+      "Developed a custom recipe ranking algorithm to prioritize results based on ingredient availability and dietary preferences.",
+      "Built a secure backend using Node.js/Express and MongoDB with JWT authentication for saving user favorites.",
+      "Designed a modern, responsive interface using React and Tailwind CSS with glassmorphism effects."
+    ],
+    tech: "React, Node.js, MongoDB, Google Vision API, Tailwind CSS, JWT",
+    repo: "https://github.com/ritikrajkvs/Smart_recipe_generator",
+    live: "https://smartrecipecc.netlify.app/",
+    thumb: "/assets/smart-recipe.png", // Make sure you added this image in Step 1
+    caseStudy: ""
+  },
+  {
     title: "Devtinder",
     role: "Full-Stack Developer (MERN)",
     duration: "May 2025 – Aug 2025",
