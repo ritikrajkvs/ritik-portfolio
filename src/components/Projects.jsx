@@ -60,7 +60,7 @@ const data = [
     ],
     tech: "React, Redux Toolkit, Firebase, TMDB API, Gemini API, TailwindCSS, YouTube Embed API",
     repo: "https://github.com/ritikrajkvs/CineGPT",
-    live: "https://cinegpt-4e591.web.app/",
+    live: "https://cine-gpt-six.vercel.app/",
     thumb: "/assets/cinegpt.png",
     caseStudy: ""
   }
